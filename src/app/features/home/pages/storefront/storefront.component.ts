@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-storefront',
-  templateUrl: './storefront.component.html',
-  styleUrls: ['./storefront.component.scss']
+    selector: 'app-storefront',
+    templateUrl: './storefront.component.html',
+    styleUrls: ['./storefront.component.scss'],
+    standalone: false
 })
 export class StorefrontComponent {
 
