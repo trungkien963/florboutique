@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
     selector: 'app-root',
@@ -11,9 +10,8 @@ export class AppComponent implements OnInit {
   
   title = 'e-commerce';
 
-  constructor(private primengConfig: PrimeNGConfig) { }
+  constructor() { }
 
   ngOnInit() {
-    this.primengConfig.ripple = true;
   }
 }

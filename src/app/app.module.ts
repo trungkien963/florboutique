@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './components/layout/layout.module';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeuix/themes/aura';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,14 @@ import { LayoutModule } from './components/layout/layout.module';
     BrowserAnimationsModule,
     LayoutModule,
   ],
-  providers: [],
+  providers: [
+    providePrimeNG({
+      theme: {
+        preset: Aura
+      },
+      ripple: true
+    })
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
