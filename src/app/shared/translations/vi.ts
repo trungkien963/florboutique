@@ -95,4 +95,11 @@ export const VI: Translations = {
   cartBtnSending: 'ĐANG GỬI...',
   cartBtnSubmit: 'GỬI ĐƠN HÀNG',
   cartAlertFillInfo: 'Vui lòng điền đầy đủ thông tin!',
+
+  customizeBouquet: 'Chỉnh sửa Bó Hoa',
+  wrappingColor: 'Màu Giấy Gói',
+  customMessage: 'Lời nhắn (Không bắt buộc)',
+  quantity: 'Số lượng',
+  cancel: 'Hủy',
+  addToCart: 'Thêm vào Giỏ hàng',
 };

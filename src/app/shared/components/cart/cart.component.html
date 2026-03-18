@@ -20,7 +20,7 @@
         <img [src]="item.image" [alt]="item.name" class="item-img" />
         <div class="item-details">
           <h4 class="item-name">{{ item.name }}</h4>
-          <span class="item-price">${{ item.price }}</span>
+          <span class="item-price">{{ lang.formatMoney(item.price) }}</span>
           <div class="quantity-controls">
             <button class="qty-btn" (click)="updateQuantity(item.id, item.quantity - 1)">-</button>
             <span class="qty">{{ item.quantity }}</span>
@@ -60,11 +60,11 @@
     <div class="checkout-summary">
       <div class="summary-row">
         <span>{{ lang.t.cartProducts }} ({{ cartService.getTotalItems() }}):</span>
-        <strong class="text-pink-deep">${{ cartService.getTotalPrice() }}</strong>
+        <strong class="text-pink-deep">{{ lang.formatMoney(cartService.getTotalPrice()) }}</strong>
       </div>
       <div class="summary-row summary-total">
         <span>{{ lang.t.cartTotal }}</span>
-        <strong class="text-pink-deep">${{ cartService.getTotalPrice() }}</strong>
+        <strong class="text-pink-deep">{{ lang.formatMoney(cartService.getTotalPrice()) }}</strong>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@
   <!-- FOOTER: Buttons actions -->
   <footer class="cart-footer" *ngIf="(cartItems$ | async)?.length && view !== 'success'">
     <ng-container *ngIf="view === 'cart'">
-      <div class="footer-total"><span>{{ lang.t.cartSubtotal }}</span> <strong>${{ cartService.getTotalPrice() }}</strong></div>
+      <div class="footer-total"><span>{{ lang.t.cartSubtotal }}</span> <strong>{{ lang.formatMoney(cartService.getTotalPrice()) }}</strong></div>
       <button pButton [label]="lang.t.cartBtnCheckout" (click)="goToCheckout()" class="w-full"></button>
     </ng-container>
 

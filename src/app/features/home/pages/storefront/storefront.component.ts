@@ -18,8 +18,20 @@ export interface Product {
   standalone: false
 })
 export class StorefrontComponent {
-
   constructor(public lang: LanguageService, private cartService: CartService) {}
+
+  displayCustomPopup: boolean = false;
+  selectedProduct: Product | null = null;
+  customQuantity: number = 1;
+  wrappingColor: any;
+  customMessage: string = '';
+
+  wrappingColors = [
+    { label: 'Kraft (Rustic)', value: 'kraft' },
+    { label: 'Blush Pink', value: 'pink' },
+    { label: 'Classic White', value: 'white' },
+    { label: 'Elegant Black', value: 'black' }
+  ];
 
   products: Product[] = [
     { id: 1, nameKey: 'productRoseName',      price: 68, image: 'assets/images/product-rose.png',      tagKey: 'productBestseller' },
@@ -49,5 +61,42 @@ export class StorefrontComponent {
       price: product.price,
       image: product.image
     });
+  }
+
+  openProductDetail(product: Product) {
+    this.selectedProduct = product;
+    this.customQuantity = 1;
+    this.wrappingColor = this.wrappingColors[0];
+    this.customMessage = '';
+    this.displayCustomPopup = true;
+  }
+
+  addCustomizedToCart() {
+    if (!this.selectedProduct) return;
+
+    // Append customization details to name
+    let customizedName = this.getProductName(this.selectedProduct);
+    if (this.wrappingColor) {
+      customizedName += ` - ${this.wrappingColor.label}`;
+    }
+    if (this.customMessage && this.customMessage.trim().length > 0) {
+      customizedName += ` (Msg: ${this.customMessage.trim()})`;
+    }
+
+    // Creating unique ID to differentiate customizations
+    const safeMessage = this.customMessage ? encodeURIComponent(this.customMessage.trim()) : '';
+    const customId = `${this.selectedProduct.id}-${this.wrappingColor?.value || 'default'}-${safeMessage}`;
+
+    // Add required count
+    for (let i = 0; i < this.customQuantity; i++) {
+        this.cartService.addToCart({
+          id: customId,
+          name: customizedName,
+          price: this.selectedProduct.price,
+          image: this.selectedProduct.image
+        });
+    }
+
+    this.displayCustomPopup = false;
   }
 }

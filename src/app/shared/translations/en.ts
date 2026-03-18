@@ -95,4 +95,11 @@ export const EN: Translations = {
   cartBtnSending: 'SENDING...',
   cartBtnSubmit: 'SUBMIT ORDER',
   cartAlertFillInfo: 'Please fill in all information!',
+
+  customizeBouquet: 'Customize Bouquet',
+  wrappingColor: 'Wrapping Color',
+  customMessage: 'Card Message (Optional)',
+  quantity: 'Quantity',
+  cancel: 'Cancel',
+  addToCart: 'Add to Cart',
 };

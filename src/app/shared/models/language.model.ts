@@ -103,4 +103,12 @@ export interface Translations {
   cartBtnSending: string;
   cartBtnSubmit: string;
   cartAlertFillInfo: string;
+
+  // Customization
+  customizeBouquet: string;
+  wrappingColor: string;
+  customMessage: string;
+  quantity: string;
+  cancel: string;
+  addToCart: string;
 }

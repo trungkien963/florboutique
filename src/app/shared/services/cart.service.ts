@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { LanguageService } from './language.service';
 
 export interface CartItem {
   id: string | number;
@@ -28,7 +29,7 @@ export class CartService {
   private cartItems = new BehaviorSubject<CartItem[]>([]);
   cartItems$ = this.cartItems.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private lang: LanguageService) {}
 
   addToCart(product: any) {
     const currentItems = this.cartItems.getValue();
@@ -82,7 +83,7 @@ export class CartService {
     const total = this.getTotalPrice();
     
     // Convert items array to string summary
-    const itemsSummary = items.map(i => `${i.name} (x${i.quantity}) - $${i.price * i.quantity}`).join('\n');
+    const itemsSummary = items.map(i => `${i.name} (x${i.quantity}) - ${this.lang.formatMoney(i.price * i.quantity)}`).join('\n');
 
     const payload: OrderPayload = {
       name: userInfo.name,
