@@ -115,9 +115,9 @@ export const VI: Translations = {
 
   // Our Story
   storySubtitle: 'Câu chuyện',
-  storyTitle: 'Khởi tạo Cái đẹp\nTừ năm 2018',
-  storyContent1: 'Tại Flơr, chúng tôi tin rằng hoa không chỉ là món quà — chúng là thông điệp của cảm xúc, ngôn ngữ không lời của tình yêu, sự ăn mừng và lòng biết ơn. Hành trình của chúng tôi bắt đầu từ một cửa tiệm nhỏ, với ước mơ mang vẻ đẹp tinh tế nhất của thiên nhiên vào cuộc sống thường nhật của mọi người.',
-  storyContent2: 'Sau nhiều năm phát triển, triết lý cốt lõi của chúng tôi vẫn không thay đổi. Chúng tôi lựa chọn những bông hoa tươi mới nhất, được trồng theo tiêu chuẩn đạo đức và tỉ mỉ cắm ghép để tạo nên những khoảnh khắc trường tồn trong trí nhớ.',
+  storyTitle: 'Nơi Cảm Xúc Bắt Đầu',
+  storyContent1: 'Chúng tôi đã bắt đầu Flơr từ năm 2025, mọc mầm từ mảnh đất tinh thần của ba người bạn lớn lên giữa lòng Sài Gòn rực rỡ. Ba mảng màu trái ngược – một bộ óc IT khô khan lặp lại cùng những dòng code; một tâm hồn Marketing cởi mở nhảy múa cùng ngôn từ; và một trí tuệ Finance nguyên tắc gắn liền với những con số. Cứ ngỡ ba đường thẳng song song sẽ chẳng bao giờ chạm mặt, cho đến một ngày, vẻ đẹp kỳ diệu của những đóa hoa đã khơi dậy trong tất cả một khao khát chung.',
+  storyContent2: 'Từ sự rung cảm mãnh liệt ấy, Flơr đã vươn mầm và khoe sắc. Ở đây, một bó hoa không chỉ là phép màu của tự nhiên mà còn là sự giao thoa hoàn mỹ giữa tư duy logic, sức sáng tạo vô hạn và cả sự chắt chiu, nâng niu đến từng nhành lá. Chúng tôi tin rằng, mỗi đóa hoa đều cất giấu một linh hồn, một thanh âm chưa từng được kể. Flơr ra đời để làm cầu nối tâm hồn, giúp bạn mượn vẻ đẹp tinh tế ấy để bộc bạch những chân tình chưa thể cất thành lời.',
   storyMissionTitle: 'Sứ mệnh',
   storyMissionDesc: 'Mang đến những trải nghiệm cắm hoa đầy tính nghệ thuật giúp truyền cảm hứng, kết nối những con tim và nâng tầm những khoảnh khắc ý nghĩa nhất.',
   storyVisionTitle: 'Tầm nhìn',

@@ -115,9 +115,9 @@ export const EN: Translations = {
 
   // Our Story
   storySubtitle: 'Our Story',
-  storyTitle: 'Crafting Beauty\nSince 2018',
-  storyContent1: 'At Flơr, we believe that flowers are more than just a gift—they are a medium of emotion, an unspoken language of love, celebration, and gratitude. Our journey began in a small boutique, founded with a simple dream: to bring a touch of nature\'s most exquisite beauty into people\'s everyday lives.',
-  storyContent2: 'Over the years, we have grown, but our core philosophy remains unchanged. We source the freshest, ethically grown flowers and meticulously arrange them to create moments that linger forever in the memory.',
+  storyTitle: 'Where Emotions Blossom',
+  storyContent1: 'Flơr was born in 2025, rooted in the vibrant heart of Saigon by three childhood friends who couldn\'t be more different. Our lives were mapped across parallel universes: the rigidly structured world of an IT engineer, the vivid canvas of a marketing creative, and the heavily calculated realm of a finance expert. Yet, these parallel lines finally intersected over an unexpected, fervent awakening—a profound fascination with the transient beauty of flowers.',
+  storyContent2: 'From that serendipity, Flơr blossomed. We are not merely a florist; we are the graceful alchemy of precise logic, boundless imagination, and meticulous devotion. To us, every single bloom carries a soul, an unwritten poem, and a silent emotion. We are here to give those blooms a voice, helping you weave your deepest feelings into stories that truly touch the heart.',
   storyMissionTitle: 'Our Mission',
   storyMissionDesc: 'To deliver artfully crafted floral experiences that inspire joy, connect hearts, and elevate life’s most meaningful moments.',
   storyVisionTitle: 'Our Vision',
