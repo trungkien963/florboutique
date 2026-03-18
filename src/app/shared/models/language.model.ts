@@ -79,4 +79,28 @@ export interface Translations {
   productPeonyName: string;
   productOrchidName: string;
   productLavenderName: string;
+
+  // Cart & Checkout
+  cartTitle: string;
+  cartDeliveryInfo: string;
+  cartOrderComplete: string;
+  cartEmpty: string;
+  cartContinueShopping: string;
+  cartCheckoutSubtitle: string;
+  cartNameLabel: string;
+  cartNamePlaceholder: string;
+  cartPhoneLabel: string;
+  cartPhonePlaceholder: string;
+  cartAddressLabel: string;
+  cartAddressPlaceholder: string;
+  cartProducts: string;
+  cartTotal: string;
+  cartSubtotal: string;
+  cartSuccessMsg1: string;
+  cartSuccessMsg2: string;
+  cartClose: string;
+  cartBtnCheckout: string;
+  cartBtnSending: string;
+  cartBtnSubmit: string;
+  cartAlertFillInfo: string;
 }

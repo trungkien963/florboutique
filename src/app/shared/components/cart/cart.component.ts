@@ -5,6 +5,8 @@ import { CartService, CartItem } from '../../services/cart.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 
+import { LanguageService } from '../../services/language.service';
+
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -22,7 +24,7 @@ export class CartComponent {
   view: 'cart' | 'checkout' | 'success' = 'cart';
   isSubmitting = false;
 
-  constructor(public cartService: CartService) {}
+  constructor(public cartService: CartService, public lang: LanguageService) {}
 
   closeCart() {
     this.visible = false;
@@ -44,7 +46,7 @@ export class CartComponent {
 
   submitOrder() {
     if (!this.userInfo.name || !this.userInfo.phone || !this.userInfo.address) {
-      alert('Vui lòng điền đầy đủ thông tin!');
+      alert(this.lang.t.cartAlertFillInfo);
       return;
     }
     this.isSubmitting = true;

@@ -22,7 +22,7 @@ export interface OrderPayload {
   providedIn: 'root'
 })
 export class CartService {
-  // Thay URL này bằng Google Apps Script Web App URL của bạn
+  // Replace this URL with your Google Apps Script Web App URL
   private readonly GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycZjRuV-d-tmG8OV7VQzuk79PCJyh4tpwm8Y8Ybk2VKe6SuoKT9AL4nBretefnvIDL2A/exec'; 
 
   private cartItems = new BehaviorSubject<CartItem[]>([]);
