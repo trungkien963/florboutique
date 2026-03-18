@@ -117,7 +117,7 @@
     <!-- Wrapping Color Option -->
     <div class="field mb-0">
       <label class="font-medium block mb-2">{{ lang.t.wrappingColor || 'Wrapping Color' }}</label>
-      <p-select [options]="wrappingColors" [(ngModel)]="wrappingColor" optionLabel="label" styleClass="w-full" class="w-full block"></p-select>
+      <p-select [options]="wrappingColors" [(ngModel)]="wrappingColor" optionLabel="label" appendTo="body" [style]="{'width':'100%'}"></p-select>
     </div>
 
     <!-- Custom Message Option -->
