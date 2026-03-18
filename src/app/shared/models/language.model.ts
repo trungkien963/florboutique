@@ -5,8 +5,10 @@ export interface Translations {
   promoBar: string;
   navBouquets: string;
   navArrangements: string;
+  navFoamArrangements: string;
   navOccasions: string;
   navPlants: string;
+  navEvents: string;
 
   // Hero
   heroEyebrow: string;
@@ -20,6 +22,7 @@ export interface Translations {
   catTulips: string;
   catPeonies: string;
   catSeasonal: string;
+  catFoamArrangements: string;
   catPlants: string;
   catAllFlowers: string;
 
@@ -49,8 +52,10 @@ export interface Translations {
 
   footerBouquets: string;
   footerArrangements: string;
+  footerFoamArrangements: string;
   footerPlantsAndPots: string;
   footerWeddingFlowers: string;
+  footerEvents: string;
   footerGiftBundles: string;
 
   footerMyAccount: string;
@@ -79,6 +84,7 @@ export interface Translations {
   productPeonyName: string;
   productOrchidName: string;
   productLavenderName: string;
+  productBasketName: string;
 
   // Cart & Checkout
   cartTitle: string;

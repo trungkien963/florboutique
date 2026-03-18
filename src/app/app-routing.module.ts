@@ -11,9 +11,9 @@ import { LayoutComponent } from './components/layout/layout.component';
                   { path: '', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule) },
                   { path: 'track-order', loadChildren: () => import('./features/order-tracking/order-tracking.module').then(m => m.OrderTrackingModule) },
                   { path: 'our-story', loadChildren: () => import('./features/our-story/our-story.module').then(m => m.OurStoryModule) },
+                  { path: 'events', loadChildren: () => import('./features/events/events.module').then(m => m.EventsModule) },
               ]
           },
-          // { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
           // { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
           //{ path: 'notfound', component: PageNotFoundComponent },
           { path: '**', redirectTo: '/notfound' },

@@ -4,8 +4,10 @@ export const VI: Translations = {
   promoBar: '🌸 Miễn phí giao hàng cho đơn trên 500k · Giao hàng trong ngày có sẵn',
   navBouquets: 'Bó hoa',
   navArrangements: 'Cắm bình',
+  navFoamArrangements: 'Hoa Cắm Xốp Để Bàn',
   navOccasions: 'Dịp đặc biệt',
   navPlants: 'Cây cảnh',
+  navEvents: 'Trang Trí Sự Kiện',
 
   heroEyebrow: 'Làm từ tình yêu',
   heroTitle: 'Nghệ thuật\ncủa những đóa hoa',
@@ -17,6 +19,7 @@ export const VI: Translations = {
   catTulips: 'Tulip',
   catPeonies: 'Mẫu đơn',
   catSeasonal: 'Theo mùa',
+  catFoamArrangements: 'Hoa Cắm Xốp Để Bàn',
   catPlants: 'Cây cảnh',
   catAllFlowers: 'Tất cả hoa',
 
@@ -43,8 +46,10 @@ export const VI: Translations = {
 
   footerBouquets: 'Bó hoa',
   footerArrangements: 'Cắm bình',
+  footerFoamArrangements: 'Hoa Cắm Xốp Để Bàn',
   footerPlantsAndPots: 'Cây & Chậu',
   footerWeddingFlowers: 'Hoa cưới',
+  footerEvents: 'Trang Trí Sự Kiện',
   footerGiftBundles: 'Quà tặng',
 
   footerMyAccount: 'Tài khoản của tôi',
@@ -72,6 +77,7 @@ export const VI: Translations = {
   productPeonyName: 'Mẫu Đơn Hồng Nhạt',
   productOrchidName: 'Lan Trắng Chậu',
   productLavenderName: 'Bó Oải Hương',
+  productBasketName: 'Lẵng Hoa Hồng Đào',
 
   cartTitle: 'Giỏ hàng',
   cartDeliveryInfo: 'Thông tin giao hàng',

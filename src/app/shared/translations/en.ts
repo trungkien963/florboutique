@@ -4,8 +4,10 @@ export const EN: Translations = {
   promoBar: '🌸 Free delivery on orders over $75 · Same-day arrangements available',
   navBouquets: 'Bouquets',
   navArrangements: 'Arrangements',
+  navFoamArrangements: 'Foam Arrangements',
   navOccasions: 'Occasions',
   navPlants: 'Plants',
+  navEvents: 'Event Decor',
 
   heroEyebrow: 'Handcrafted with love',
   heroTitle: 'The Art of\nElegant Blooms',
@@ -17,6 +19,7 @@ export const EN: Translations = {
   catTulips: 'Tulips',
   catPeonies: 'Peonies',
   catSeasonal: 'Seasonal',
+  catFoamArrangements: 'Foam Arrangements',
   catPlants: 'Plants',
   catAllFlowers: 'All Flowers',
 
@@ -43,8 +46,10 @@ export const EN: Translations = {
 
   footerBouquets: 'Bouquets',
   footerArrangements: 'Arrangements',
+  footerFoamArrangements: 'Foam Arrangements',
   footerPlantsAndPots: 'Plants & Pots',
   footerWeddingFlowers: 'Wedding Flowers',
+  footerEvents: 'Event Decor',
   footerGiftBundles: 'Gift Bundles',
 
   footerMyAccount: 'My Account',
@@ -72,6 +77,7 @@ export const EN: Translations = {
   productPeonyName: 'Blush Peony Dream',
   productOrchidName: 'White Orchid Planter',
   productLavenderName: 'Lavender Bundle',
+  productBasketName: 'Peach Rose Basket',
 
   cartTitle: 'Shopping Cart',
   cartDeliveryInfo: 'Delivery Information',

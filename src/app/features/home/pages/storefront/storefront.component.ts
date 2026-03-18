@@ -9,6 +9,7 @@ export interface Product {
   image: string;
   tagKey?: string;
   isFavorite?: boolean;
+  type?: 'bouquet' | 'foam-arrangement' | 'plant' | 'seasonal' | 'other';
 }
 
 @Component({
@@ -37,9 +38,10 @@ export class StorefrontComponent {
     { id: 1, nameKey: 'productRoseName',      price: 68, image: 'assets/images/product-rose.png',      tagKey: 'productBestseller' },
     { id: 2, nameKey: 'productTulipName',     price: 45, image: 'assets/images/product-tulip.png',     tagKey: 'productNew'        },
     { id: 3, nameKey: 'productSunflowerName', price: 52, image: 'assets/images/product-sunflower.png'                               },
-    { id: 4, nameKey: 'productPeonyName',     price: 89, image: 'assets/images/product-peony.png',     tagKey: 'productPremium'    },
-    { id: 5, nameKey: 'productOrchidName',    price: 75, image: 'assets/images/product-orchid.png'                                  },
-    { id: 6, nameKey: 'productLavenderName',  price: 32, image: 'assets/images/product-lavender.png',  tagKey: 'productSeasonal'   },
+    { id: 4, nameKey: 'productPeonyName',     price: 89, image: 'assets/images/product-peony.png',     tagKey: 'productPremium',   type: 'bouquet' },
+    { id: 5, nameKey: 'productOrchidName',    price: 75, image: 'assets/images/product-orchid.png',                                type: 'plant'   },
+    { id: 6, nameKey: 'productLavenderName',  price: 32, image: 'assets/images/product-lavender.png',  tagKey: 'productSeasonal',  type: 'bouquet' },
+    { id: 7, nameKey: 'productBasketName',    price: 95, image: 'assets/images/product-basket.png',    tagKey: 'productPremium',   type: 'foam-arrangement' },
   ];
 
   getProductName(p: Product): string {

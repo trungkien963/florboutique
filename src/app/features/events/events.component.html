@@ -1,0 +1,83 @@
+<!-- ===================================================
+     Flơr — Events Page
+     =================================================== -->
+
+<section class="events-hero animate-fade-up">
+  <div class="container text-center py-8">
+    <p class="eyebrow" style="color: var(--flor-pink-600); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">{{ lang.t.navEvents }}</p>
+    <h1 style="font-size: 3rem; margin: 1rem 0; font-family: 'Playfair Display', serif;">Thiết Kế & Trang Trí Sự Kiện</h1>
+    <p style="font-size: 1.125rem; color: var(--text-color-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6;">
+      Từ những tiệc cưới sang trọng, lễ đính hôn lãng mạn, đến các sự kiện doanh nghiệp hoành tráng, chúng tôi mang tới những thiết kế hoa tươi độc bản và nghệ thuật nhất.
+    </p>
+  </div>
+</section>
+
+<section class="events-gallery container py-5">
+  <div class="grid">
+    <!-- Đám cưới, đám hỏi -->
+    <div class="col-12 md:col-6 lg:col-4 p-3" (click)="openGallery('wedding')">
+      <div class="event-card border-round-xl overflow-hidden shadow-2 cursor-pointer transition-transform transition-duration-300 hover:-translate-y-2">
+        <div style="height: 300px; background-color: #fce4ec; overflow: hidden; position: relative;">
+          <!-- Thay bằng ảnh thật từ thư mục assets -->
+          <img src="assets/images/event-wedding.png" alt="Đám Cưới & Đám Hỏi" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://placehold.co/600x400/fce4ec/pink?text=Wedding'" />
+        </div>
+        <div class="p-4 bg-white">
+          <h3 class="m-0 mb-2 font-serif text-xl border-bottom-1 surface-border pb-2">Đám Cưới & Đám Hỏi</h3>
+          <p class="m-0 text-color-secondary line-height-3">Lưu giữ khoảnh khắc trăm năm với cổng cưới nghệ thuật, phông sân khấu và không gian lãng mạn tinh tế.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sự kiện doanh nghiệp -->
+    <div class="col-12 md:col-6 lg:col-4 p-3" (click)="openGallery('corporate')">
+      <div class="event-card border-round-xl overflow-hidden shadow-2 cursor-pointer transition-transform transition-duration-300 hover:-translate-y-2">
+        <div style="height: 300px; background-color: #e8eaf6; overflow: hidden; position: relative;">
+          <!-- Thay bằng ảnh thật từ thư mục assets -->
+          <img src="assets/images/event-corporate.png" alt="Sự Kiện Doanh Nghiệp" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://placehold.co/600x400/e8eaf6/indigo?text=Corporate'" />
+        </div>
+        <div class="p-4 bg-white">
+          <h3 class="m-0 mb-2 font-serif text-xl border-bottom-1 surface-border pb-2">Sự Kiện Doanh Nghiệp</h3>
+          <p class="m-0 text-color-secondary line-height-3">Nâng tầm thương hiệu với không gian trang trí sang trọng, chuyên nghiệp và khẳng định đẳng cấp.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sinh nhật, tiệc -->
+    <div class="col-12 md:col-6 lg:col-4 p-3" (click)="openGallery('birthday')">
+      <div class="event-card border-round-xl overflow-hidden shadow-2 cursor-pointer transition-transform transition-duration-300 hover:-translate-y-2">
+        <div style="height: 300px; background-color: #e8f5e9; overflow: hidden; position: relative;">
+          <!-- Thay bằng ảnh thật từ thư mục assets -->
+          <img src="assets/images/event-birthday.png" alt="Sinh Nhật & Lễ Kỷ Niệm" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://placehold.co/600x400/e8f5e9/green?text=Birthday'" />
+        </div>
+        <div class="p-4 bg-white">
+          <h3 class="m-0 mb-2 font-serif text-xl border-bottom-1 surface-border pb-2">Sinh Nhật & Lễ Kỷ Niệm</h3>
+          <p class="m-0 text-color-secondary line-height-3">Biến bữa tiệc của bạn thành một khu vườn nghệ thuật ngập tràn sắc màu và sự ấn tượng.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center mt-7 mb-7">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">Bạn đang lên ý tưởng cho sự kiện của mình?</h2>
+    <p class="text-color-secondary mb-4">Hãy để chúng mình đồng hành cùng bạn thiết kế một không gian hoàn hảo nhất.</p>
+    <p-button label="Nhận Tư Vấn Kế Hoạch Tiệc" severity="contrast" styleClass="border-round-sm px-6 py-3 font-semibold text-lg" icon="pi-calendar"></p-button>
+  </div>
+</section>
+
+<!-- Dialog Hiển thị bộ sưu tập ảnh và giá -->
+<p-dialog [(visible)]="displayGallery" [modal]="true" [header]="selectedEventTitle" [style]="{width: '90vw', maxWidth: '1000px'}" [draggable]="false" [resizable]="false">
+  <div class="grid pt-3">
+    <div class="col-12 md:col-6 lg:col-4 p-2" *ngFor="let project of galleryProjects">
+      <div class="border-round-lg overflow-hidden shadow-1 hover:shadow-3 transition-all transition-duration-300 h-full flex flex-column bg-white">
+        <!-- P-Image cho phép click vào xem ảnh phóng to -->
+        <p-image [src]="project.image" alt="Project Image" width="100%" [preview]="true" imageClass="w-full h-auto block cursor-pointer"></p-image>
+        <div class="p-3 flex flex-column flex-grow-1">
+          <h4 class="m-0 mb-2 text-lg font-serif">{{ project.title }}</h4>
+          <p class="m-0 mt-auto font-semibold text-pink-600 text-lg">
+            {{ lang.formatMoney(project.price) }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</p-dialog>
