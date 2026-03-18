@@ -1,81 +1,73 @@
-<div class="surface-50 px-4 py-8 md:px-6 lg:px-8"><span
-        class="text-900 text-3xl font-medium block text-center lg:text-left">Get 25% Discount Today!</span><span
-        class="text-600 text-2xl block mt-4 text-center lg:text-left">Sign up our email list and know all about new
-        collections of Peak</span>
-    <div class="mt-4 mx-auto lg:mx-0" style="max-width: 38rem;">
-        <div class="p-inputgroup"><input type="text" pInputText placeholder="Enter your email address"
-                class="p-inputtext p-component p-element"><button type="button" pButton pRipple label="Subscribe"
-                class="p-element p-ripple surface-900 text-0 px-5 border-none p-button p-component"></button></div>
-    </div><p-divider layout="horizontal" class="p-element surface-border"></p-divider>
-    <div class="grid grid-nogutter text-center lg:text-left">
-        <div class="col-12 sm:col-6 md:col-4 lg:col-3 mt-4 flex flex-column align-items-center lg:align-items-start">
-            <img src="https://blocks.primeng.org/assets/images/blocks/logos/peak-700.svg" alt="Peak logo"
-                class="w-9rem mx-auto lg:mx-0">
-            <div class="flex align-items-center w-full mt-5 justify-content-center lg:justify-content-start"><a
-                    tabindex="0" class="cursor-pointer mr-3"><i
-                        class="pi pi-facebook surface-900 p-1 text-sm border-circle text-0"></i></a><a tabindex="0"
-                    class="cursor-pointer mr-3"><i
-                        class="pi pi-twitter surface-900 p-1 text-sm border-circle text-0"></i></a><a tabindex="0"
-                    class="cursor-pointer mr-3"><i
-                        class="pi pi-youtube surface-900 p-1 text-sm border-circle text-0"></i></a><a tabindex="0"
-                    class="cursor-pointer"><i class="pi pi-google surface-900 p-1 text-sm border-circle text-0"></i></a>
-            </div><span class="text-600 block mt-4"><i class="pi pi-phone mr-2"></i>1234 / 12 34 567</span><a
-                tabindex="0"
-                class="text-600 block mt-4 cursor-pointer hover:text-900 transition-duration-150 select-none w-8rem"><i
-                    class="pi pi-map-marker mr-2"></i>Contact Us</a>
-        </div>
-        <div class="col-12 sm:col-6 md:col-4 lg:col-3 mt-4 flex flex-column"><span
-                class="text-900 text-xl font-medium block">Company</span>
-            <ul class="list-none p-0">
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">About Peak</a>
-                </li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Factories</a>
-                </li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Careers</a>
-                </li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Environmental
-                        Initiatives</a></li>
-            </ul>
-        </div>
-        <div class="col-12 sm:col-6 md:col-4 lg:col-3 mt-4 flex flex-column"><span
-                class="text-900 text-xl font-medium block">Account</span>
-            <ul class="list-none p-0">
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Manage
-                        Account</a></li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Saved
-                        Items</a></li>
-                <li><a tabindex="0" class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">My
-                        Cart</a></li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Wishlist</a>
-                </li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Orders &amp;
-                        Returns</a></li>
-            </ul>
-        </div>
-        <div class="col-12 sm:col-6 md:col-4 lg:col-3 mt-4 flex flex-column"><span
-                class="text-900 text-xl font-medium block">Legal</span>
-            <ul class="list-none p-0">
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Investor
-                        Relations</a></li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Data
-                        Privacy</a></li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Terms of
-                        Service</a></li>
-                <li><a tabindex="0"
-                        class="text-600 hover:text-900 transition-duration-150 cursor-pointer mt-3 block">Legal
-                        Information</a></li>
-            </ul>
-        </div>
+<!-- ═══════════════════════ Flơr Footer ═══════════════════════ -->
+<footer class="flr-footer">
+
+  <!-- Newsletter strip -->
+  <div class="footer-newsletter">
+    <div class="footer-newsletter__inner">
+      <div class="footer-newsletter__text">
+        <h3>{{ lang.t.footerStayInBloom }}</h3>
+        <p>{{ lang.t.footerSubscribeDesc }}</p>
+      </div>
+      <form class="footer-newsletter__form" (submit)="$event.preventDefault()">
+        <input type="email" pInputText [placeholder]="lang.t.footerEmailPlaceholder" class="footer-input" id="newsletter-email" aria-label="Newsletter email" />
+        <button pButton pRipple type="submit" label="{{ lang.t.footerSubscribe }}" class="footer-subscribe-btn p-button-plain"></button>
+      </form>
     </div>
-</div>
+  </div>
+
+  <!-- Main footer columns -->
+  <div class="footer-body">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <app-logo customClass="footer-logo-override"></app-logo>
+        <p class="footer-tagline">{{ lang.t.footerTagline }}</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram" class="social-link"><i class="pi pi-instagram"></i></a>
+          <a href="#" aria-label="Facebook" class="social-link"><i class="pi pi-facebook"></i></a>
+          <a href="#" aria-label="Pinterest" class="social-link"><i class="pi pi-twitter"></i></a>
+        </div>
+        <p class="footer-contact"><i class="pi pi-phone"></i> 0348 997 157</p>
+      </div>
+
+
+      <div class="footer-col">
+        <h4 class="footer-col__title">{{ lang.t.footerShop }}</h4>
+        <ul>
+          <li><a href="#">{{ lang.t.footerBouquets }}</a></li>
+          <li><a href="#">{{ lang.t.footerArrangements }}</a></li>
+          <li><a href="#">{{ lang.t.footerPlantsAndPots }}</a></li>
+          <li><a href="#">{{ lang.t.footerWeddingFlowers }}</a></li>
+          <li><a href="#">{{ lang.t.footerGiftBundles }}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col__title">{{ lang.t.footerAccount }}</h4>
+        <ul>
+          <li><a href="#">{{ lang.t.footerMyAccount }}</a></li>
+          <li><a href="#">{{ lang.t.footerMyOrders }}</a></li>
+          <li><a href="#">{{ lang.t.footerWishlist }}</a></li>
+          <li><a href="#">{{ lang.t.footerGiftCards }}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col__title">{{ lang.t.footerHelp }}</h4>
+        <ul>
+          <li><a href="#">{{ lang.t.footerDeliveryInfo }}</a></li>
+          <li><a href="#">{{ lang.t.footerCareGuide }}</a></li>
+          <li><a href="#">{{ lang.t.footerFAQs }}</a></li>
+          <li><a href="#">{{ lang.t.footerContactUs }}</a></li>
+          <li><a href="#">{{ lang.t.footerPrivacyPolicy }}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <p>{{ lang.t.footerCopyright }}</p>
+    <p>{{ lang.t.footerMadeWith }}</p>
+  </div>
+
+</footer>

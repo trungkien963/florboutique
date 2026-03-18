@@ -1,0 +1,21 @@
+.brand-logo {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__img {
+    height: auto;
+    object-fit: contain;
+    // Default size for navbar
+    max-height: 48px;
+    width: auto;
+  }
+
+}

@@ -1,0 +1,403 @@
+// ═══════════════════════════════════════════════
+//   Flơr — Storefront Styles
+//   Modern Minimalism · Pink & Gray Palette
+// ═══════════════════════════════════════════════
+
+// ── Local tokens ─────────────────────────────
+$white:       #ffffff;
+$bg:          #fafafa;
+$surface:     #f5f5f5;
+$pink-light:  #fde8ef;
+$pink:        #f4a7c0;
+$pink-mid:    #e8799e;
+$pink-deep:   #c9507a;
+$gray-100:    #f0f0f0;
+$gray-200:    #e4e4e4;
+$gray-300:    #d1d1d1;
+$gray-400:    #a8a8a8;
+$gray-500:    #808080;
+$gray-600:    #5c5c5c;
+$gray-800:    #242424;
+
+$font-serif:  'Playfair Display', Georgia, serif;
+$font-sans:   'DM Sans', system-ui, sans-serif;
+
+// ── Layout Helpers ─────────────────────────
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+
+
+// ═════════════════════════════════════════════
+//  HERO
+// ═════════════════════════════════════════════
+.hero {
+  position: relative;
+  height: 90vh;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  picture {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    transition: transform 8s ease;
+  }
+
+  &:hover &__img,
+  &:hover picture &__img {
+    transform: scale(1.03);
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      rgba(253, 232, 239, 0.78) 0%,
+      rgba(244, 167, 192, 0.25) 50%,
+      transparent 100%
+    );
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: 0 4rem;
+    max-width: 580px;
+    animation: fadeInUp 0.8s ease both;
+  }
+
+  &__eyebrow {
+    font-family: $font-sans;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $pink-deep;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: $gray-800;
+    margin-bottom: 1.25rem;
+    white-space: pre-line;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: $gray-600;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    max-width: 420px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+// ═════════════════════════════════════════════
+//  CATEGORIES
+// ═════════════════════════════════════════════
+.categories {
+  background: $white;
+  border-bottom: 1px solid $gray-200;
+  padding: 0;
+
+  .category-list {
+    list-style: none;
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1rem 1.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $gray-500;
+    cursor: pointer;
+    border-right: 1px solid $gray-200;
+    transition: color .2s, background .2s;
+
+    &:last-child { border-right: none; }
+
+    &:hover {
+      color: $pink-deep;
+      background: $pink-light;
+    }
+
+    .category-icon { font-size: 1.25rem; }
+  }
+}
+
+// ═════════════════════════════════════════════
+//  PRODUCTS SECTION
+// ═════════════════════════════════════════════
+.products {
+  background: $bg;
+  padding: 5rem 0;
+}
+
+// ── Section Header ──────────────────────────
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $pink-mid;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    color: $gray-800;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    color: $gray-500;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+// ── Product Grid ────────────────────────────
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+// ── Product Card ────────────────────────────
+.product-card {
+  background: $white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  transition: box-shadow .3s ease, transform .3s ease;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,.11);
+    transform: translateY(-5px);
+  }
+
+  &__image-wrap {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: $pink-light;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+  }
+
+  &:hover &__image {
+    transform: scale(1.07);
+  }
+
+    &__tag-pn {
+      position: absolute;
+      top: 0.9rem;
+      left: 0.9rem;
+      z-index: 10;
+      ::ng-deep .p-badge {
+        font-family: $font-sans;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 0.65rem;
+        padding: 0.28rem 0.65rem;
+        background: $pink-deep;
+        border-radius: 3px;
+      }
+    }
+
+    &__fav-pn {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      z-index: 10;
+      ::ng-deep .p-button {
+        width: 2.1rem;
+        height: 2.1rem;
+        background: $white !important;
+        border: none;
+        color: $gray-400 !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        
+        &:hover {
+          background: $pink-light !important;
+          color: $pink-deep !important;
+          transform: scale(1.1);
+        }
+      }
+      ::ng-deep .p-button.p-button-danger {
+        color: $pink-deep !important;
+      }
+    }
+
+  &__info {
+    padding: 1.1rem 1.2rem 1.3rem;
+  }
+
+  &__name {
+    font-family: $font-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: $gray-800;
+    margin-bottom: 0.65rem;
+    line-height: 1.3;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-family: $font-sans;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: $pink-deep;
+    letter-spacing: 0.02em;
+  }
+
+
+}
+
+// ── View All ──────────────────────────────
+.view-all-wrap {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+// ═════════════════════════════════════════════
+//  PROMISES STRIP
+// ═════════════════════════════════════════════
+.promises {
+  background: $pink-light;
+  padding: 4rem 0;
+
+  .promise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .promise-item {
+    padding: 1.5rem;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    transition: transform .3s ease, box-shadow .3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(201,80,122,.12);
+    }
+
+    &__icon {
+      font-size: 1.6rem;
+      color: $pink-deep;
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+
+    h4 {
+      font-family: $font-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: $gray-800;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: $gray-500;
+      line-height: 1.65;
+    }
+  }
+}
+
+// ═════════════════════════════════════════════
+//  ANIMATIONS
+// ═════════════════════════════════════════════
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ═════════════════════════════════════════════
+//  RESPONSIVE
+// ═════════════════════════════════════════════
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+
+    &__content {
+      padding: 0 1.5rem;
+    }
+  }
+
+  .categories .category-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

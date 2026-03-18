@@ -1,0 +1,75 @@
+import { Translations } from '../models/language.model';
+
+export const VI: Translations = {
+  promoBar: '🌸 Miễn phí giao hàng cho đơn trên 500k · Giao hàng trong ngày có sẵn',
+  navBouquets: 'Bó hoa',
+  navArrangements: 'Cắm bình',
+  navOccasions: 'Dịp đặc biệt',
+  navPlants: 'Cây cảnh',
+
+  heroEyebrow: 'Làm từ tình yêu',
+  heroTitle: 'Nghệ thuật\ncủa những đóa hoa',
+  heroSubtitle: 'Hoa tươi, cắm nghệ thuật, giao tận cửa — dành cho mọi khoảnh khắc đặc biệt.',
+  heroShopNow: 'Mua ngay',
+  heroOurStory: 'Câu chuyện của chúng tôi',
+
+  catRoses: 'Hồng',
+  catTulips: 'Tulip',
+  catPeonies: 'Mẫu đơn',
+  catSeasonal: 'Theo mùa',
+  catPlants: 'Cây cảnh',
+  catAllFlowers: 'Tất cả hoa',
+
+  sectionEyebrow: 'Bộ sưu tập',
+  sectionTitle: 'Hoa tươi mỗi ngày',
+  sectionSubtitle: 'Mỗi bó hoa được làm thủ công và giao trong ngày.',
+  viewAll: 'Xem tất cả hoa',
+
+  promiseDeliveryTitle: 'Giao hàng trong ngày',
+  promiseDeliveryDesc: 'Đặt trước 12 giờ để giao hàng trong ngày.',
+  promiseQualityTitle: 'Hoa tươi từ vườn',
+  promiseQualityDesc: 'Nguồn trực tiếp, luôn tươi mới mỗi ngày.',
+  promiseGiftTitle: 'Gói quà miễn phí',
+  promiseGiftDesc: 'Gói quà đẹp kèm theo mọi đơn hàng.',
+
+  footerStayInBloom: 'Luôn rực rỡ',
+  footerSubscribeDesc: 'Đăng ký để nhận ưu đãi theo mùa, mẹo chăm sóc hoa và khuyến mãi sớm nhất.',
+  footerEmailPlaceholder: 'Địa chỉ email của bạn',
+  footerSubscribe: 'Đăng ký',
+  footerTagline: 'Hoa thủ công cho những khoảnh khắc đẹp nhất cuộc đời.',
+  footerShop: 'Cửa hàng',
+  footerAccount: 'Tài khoản',
+  footerHelp: 'Hỗ trợ',
+
+  footerBouquets: 'Bó hoa',
+  footerArrangements: 'Cắm bình',
+  footerPlantsAndPots: 'Cây & Chậu',
+  footerWeddingFlowers: 'Hoa cưới',
+  footerGiftBundles: 'Quà tặng',
+
+  footerMyAccount: 'Tài khoản của tôi',
+  footerMyOrders: 'Đơn hàng',
+  footerWishlist: 'Yêu thích',
+  footerGiftCards: 'Thẻ quà tặng',
+
+  footerDeliveryInfo: 'Thông tin giao hàng',
+  footerCareGuide: 'Hướng dẫn chăm sóc',
+  footerFAQs: 'Câu hỏi thường gặp',
+  footerContactUs: 'Liên hệ',
+  footerPrivacyPolicy: 'Chính sách bảo mật',
+
+  footerCopyright: '© 2026 Flơr. Bảo lưu mọi quyền.',
+  footerMadeWith: 'Làm từ 🌸 dành cho những người yêu hoa.',
+
+  productBestseller: 'Bán chạy',
+  productNew: 'Mới',
+  productPremium: 'Cao cấp',
+  productSeasonal: 'Theo mùa',
+
+  productRoseName: 'Bó Hồng Đỏ',
+  productTulipName: 'Tulip Pastel Mix',
+  productSunflowerName: 'Hướng Dương Vườn',
+  productPeonyName: 'Mẫu Đơn Hồng Nhạt',
+  productOrchidName: 'Lan Trắng Chậu',
+  productLavenderName: 'Bó Oải Hương',
+};

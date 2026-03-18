@@ -1,0 +1,236 @@
+// ═══════════════════════════════════════════════
+//   Flơr — Footer · Modern Minimalism
+//   Palette: Pink & Gray
+// ═══════════════════════════════════════════════
+
+$pink:       #f4a7c0;
+$pink-mid:   #e8799e;
+$pink-deep:  #c9507a;
+$pink-light: #fde8ef;
+$gray-100:   #f0f0f0;
+$gray-200:   #e4e4e4;
+$gray-400:   #a8a8a8;
+$gray-500:   #808080;
+$gray-600:   #5c5c5c;
+$gray-800:   #242424;
+$white:      #ffffff;
+$bg:         #fafafa;
+
+// ── Newsletter Strip ────────────────────────────
+.footer-newsletter {
+  background: linear-gradient(120deg, $pink-deep 0%, $pink-mid 100%);
+  padding: 3rem 2rem;
+
+  &__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__text {
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: $white;
+      margin-bottom: 0.35rem;
+    }
+    p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+  }
+
+  &__form {
+    display: flex;
+    gap: 0;
+    flex: 0 0 auto;
+    min-width: 320px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  }
+}
+
+.footer-input {
+  flex: 1;
+  padding: 0.75rem 1.1rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: $white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  backdrop-filter: blur(4px);
+  transition: background .2s;
+
+  &::placeholder { color: rgba(255,255,255,0.65); }
+  &:focus { background: rgba(255, 255, 255, 0.26); }
+}
+
+.footer-subscribe-btn {
+  padding: 0.75rem 1.5rem;
+  background: $white;
+  color: $pink-deep;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+
+  &:hover {
+    background: $gray-100;
+  }
+}
+
+// ── Footer body wrapper ─────────────────────────
+.footer-body {
+  background: $bg;
+  border-top: 1px solid $gray-200;
+}
+
+// ── Main footer grid ─────────────────────────────
+.footer-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+// ── Brand column ────────────────────────────────
+.footer-brand {
+  ::ng-deep .footer-logo-override .brand-logo__img {
+    max-height: 56px;
+    margin-bottom: 0.85rem;
+  }
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: $gray-500;
+  line-height: 1.65;
+  margin-bottom: 1.3rem;
+  max-width: 240px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.social-link {
+  width: 2rem;
+  height: 2rem;
+  background: $pink-light;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: $pink-deep;
+  font-size: 0.82rem;
+  transition: background .2s, color .2s, transform .2s;
+
+  &:hover {
+    background: $pink-deep;
+    color: $white;
+    transform: translateY(-2px);
+  }
+}
+
+.footer-contact {
+  font-size: 0.82rem;
+  color: $gray-500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  i { color: $pink-mid; font-size: 0.8rem; }
+}
+
+// ── Link columns ────────────────────────────────
+.footer-col {
+  &__title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $gray-800;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.65rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 1.5rem;
+      height: 1.5px;
+      background: $pink-mid;
+      border-radius: 1px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    a {
+      font-size: 0.85rem;
+      color: $gray-500;
+      text-decoration: none;
+      transition: color .2s, padding-left .2s;
+
+      &:hover {
+        color: $pink-deep;
+        padding-left: 3px;
+      }
+    }
+  }
+}
+
+// ── Bottom bar ──────────────────────────────────
+.footer-bottom {
+  background: $gray-800;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.77rem;
+  flex-wrap: wrap;
+}
+
+// ── Responsive ──────────────────────────────────
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-newsletter__form {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
