@@ -1,0 +1,94 @@
+<!-- Vùng nền tối để click đóng giỏ hàng -->
+<div class="cart-backdrop" [class.show]="visible" (click)="closeCart()"></div>
+
+<!-- Slide panel giỏ hàng -->
+<aside class="cart-panel" [class.open]="visible">
+  <!-- HEADER -->
+  <header class="cart-header">
+    <h2 class="cart-title">
+      <ng-container *ngIf="view === 'cart'">Giỏ hàng ({{ cartService.getTotalItems() }})</ng-container>
+      <ng-container *ngIf="view === 'checkout'">Thông tin giao hàng</ng-container>
+      <ng-container *ngIf="view === 'success'">Hoàn tất đơn hàng</ng-container>
+    </h2>
+    <span class="close-btn" (click)="closeCart()"><i class="pi pi-times"></i></span>
+  </header>
+
+  <!-- BODY: Danh sách sản phẩm -->
+  <div class="cart-body" *ngIf="view === 'cart'">
+    <ng-container *ngIf="(cartItems$ | async)?.length; else emptyCart">
+      <div class="cart-item" *ngFor="let item of (cartItems$ | async)">
+        <img [src]="item.image" [alt]="item.name" class="item-img" />
+        <div class="item-details">
+          <h4 class="item-name">{{ item.name }}</h4>
+          <span class="item-price">${{ item.price }}</span>
+          <div class="quantity-controls">
+            <button class="qty-btn" (click)="updateQuantity(item.id, item.quantity - 1)">-</button>
+            <span class="qty">{{ item.quantity }}</span>
+            <button class="qty-btn" (click)="updateQuantity(item.id, item.quantity + 1)">+</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #emptyCart>
+      <div class="empty-state">
+        <i class="pi pi-shopping-cart empty-icon"></i>
+        <p>Giỏ hàng của bạn đang trống.</p>
+        <button pButton label="TIẾP TỤC MUA SẮM" (click)="closeCart()" severity="contrast" class="mt-4 px-4"></button>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- BODY: Checkout Form -->
+  <div class="cart-body checkout-form" *ngIf="view === 'checkout'">
+    <p class="checkout-subtitle">Điền thông tin để chúng tôi liên hệ chốt đơn với bạn nhé!</p>
+    
+    <div class="field">
+      <label for="name">Họ và tên</label>
+      <input id="name" type="text" pInputText [(ngModel)]="userInfo.name" placeholder="Ví dụ: Nguyễn Văn A" />
+    </div>
+    
+    <div class="field">
+      <label for="phone">Số điện thoại</label>
+      <input id="phone" type="text" pInputText [(ngModel)]="userInfo.phone" placeholder="09xxxxxxxxx" />
+    </div>
+
+    <div class="field">
+      <label for="address">Địa chỉ giao bình / lời nhắn</label>
+      <input id="address" type="text" pInputText [(ngModel)]="userInfo.address" placeholder="Ghi chú thêm nếu cần..." />
+    </div>
+    
+    <div class="checkout-summary">
+      <div class="summary-row">
+        <span>Sản phẩm ({{ cartService.getTotalItems() }}):</span>
+        <strong class="text-pink-deep">${{ cartService.getTotalPrice() }}</strong>
+      </div>
+      <div class="summary-row summary-total">
+        <span>Tổng cộng:</span>
+        <strong class="text-pink-deep">${{ cartService.getTotalPrice() }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY: Success Message -->
+  <div class="cart-body success-state" *ngIf="view === 'success'">
+    <i class="pi pi-check-circle success-icon"></i>
+    <h3>Gửi đơn hàng thành công!</h3>
+    <p>Cảm ơn bạn đã đặt hoa. Shop sẽ chủ động liên hệ qua điện thoại để xác nhận đơn và tiến hành giao hàng trong thời gian sớm nhất nhé.</p>
+    <button pButton label="ĐÓNG" (click)="closeCart()" class="w-full mt-4"></button>
+  </div>
+
+  <!-- FOOTER: Buttons actions -->
+  <footer class="cart-footer" *ngIf="(cartItems$ | async)?.length && view !== 'success'">
+    <ng-container *ngIf="view === 'cart'">
+      <div class="footer-total"><span>Tạm tính:</span> <strong>${{ cartService.getTotalPrice() }}</strong></div>
+      <button pButton label="Chốt giá tiền & Đặt Hoa" (click)="goToCheckout()" class="w-full"></button>
+    </ng-container>
+
+    <ng-container *ngIf="view === 'checkout'">
+      <div class="flex gap-2 w-full">
+        <button pButton icon="pi pi-arrow-left" (click)="backToCart()" severity="secondary" [outlined]="true" class="w-4"></button>
+        <button pButton [label]="isSubmitting ? 'ĐANG GỬI...' : 'GỬI ĐƠN HÀNG'" [disabled]="isSubmitting" (click)="submitOrder()" class="flex-1"></button>
+      </div>
+    </ng-container>
+  </footer>
+</aside>

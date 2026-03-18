@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LanguageService } from '../../../../shared/services/language.service';
+import { CartService } from '../../../../shared/services/cart.service';
 
 export interface Product {
   id: number;
@@ -18,7 +19,7 @@ export interface Product {
 })
 export class StorefrontComponent {
 
-  constructor(public lang: LanguageService) {}
+  constructor(public lang: LanguageService, private cartService: CartService) {}
 
   products: Product[] = [
     { id: 1, nameKey: 'productRoseName',      price: 68, image: 'assets/images/product-rose.png',      tagKey: 'productBestseller' },
@@ -39,5 +40,14 @@ export class StorefrontComponent {
 
   toggleFavorite(product: Product) {
     product.isFavorite = !product.isFavorite;
+  }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart({
+      id: product.id,
+      name: this.getProductName(product),
+      price: product.price,
+      image: product.image
+    });
   }
 }

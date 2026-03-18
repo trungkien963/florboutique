@@ -33,8 +33,8 @@
       <p-button icon="pi pi-user" [text]="true" rounded="true" styleClass="p-button-plain p-button-sm flor-icon"></p-button>
       
       <!-- PrimeNG Button + pBadge for cart -->
-      <p-button styleClass="p-button-plain p-button-sm flor-icon mr-2 p-0" [text]="true" rounded="true" aria-label="Cart">
-        <i class="pi pi-shopping-bag" pBadge value="2" severity="danger"></i>
+      <p-button styleClass="p-button-plain p-button-sm flor-icon mr-2 p-0" [text]="true" rounded="true" aria-label="Cart" (click)="toggleCart()">
+        <i class="pi pi-shopping-bag" pBadge [value]="cartService.getTotalItems() ? cartService.getTotalItems().toString() : ''" severity="danger"></i>
       </p-button>
 
       <!-- Language toggle -->
@@ -46,4 +46,7 @@
     </div>
 
   </nav>
+
+  <!-- CART SIDEBAR COMPONENT -->
+  <app-cart [(visible)]="cartVisible"></app-cart>
 </header>

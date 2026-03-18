@@ -73,20 +73,22 @@ $bg:         #fafafa;
 }
 
 .footer-subscribe-btn {
-  padding: 0.75rem 1.5rem;
-  background: $white;
-  color: $pink-deep;
-  border: none;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background .2s, color .2s;
+  padding: 0.75rem 1.5rem !important;
+  background: $white !important;
+  color: $pink-deep !important;
+  border: none !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: background .2s, color .2s !important;
 
-  &:hover {
-    background: $gray-100;
+  &:hover, &:focus, &:active {
+    background: $pink-light !important;
+    color: $pink-deep !important;
+    box-shadow: 0 4px 12px rgba(200,80,122,.2) !important;
   }
 }
 

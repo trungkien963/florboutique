@@ -83,7 +83,7 @@
           <h3 class="product-card__name">{{ getProductName(product) }}</h3>
           <div class="product-card__footer">
             <span class="product-card__price">${{ product.price }}</span>
-            <p-button icon="pi pi-shopping-bag" [rounded]="true" severity="contrast" styleClass="p-button-sm shadow-2"></p-button>
+            <p-button icon="pi pi-shopping-bag" [rounded]="true" severity="contrast" styleClass="p-button-sm shadow-2" (click)="addToCart(product)"></p-button>
           </div>
         </div>
       </article>

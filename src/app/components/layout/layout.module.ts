@@ -6,6 +6,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
 import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
 import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
+import { CartComponent } from 'src/app/shared/components/cart/cart.component';
 
 import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
@@ -30,6 +31,7 @@ import { BadgeModule } from 'primeng/badge';
     RippleModule,
     StyleClassModule,
     BadgeModule,
+    CartComponent, // Import standalone CartComponent here
   ],
   exports: [LayoutComponent]
 })

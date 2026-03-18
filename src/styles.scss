@@ -94,3 +94,105 @@ body {
 .animate-fade-up   { animation: fadeInUp  0.7s var(--ease) both; }
 .animate-fade-in   { animation: fadeIn    0.5s var(--ease) both; }
 .animate-slide-left{ animation: slideInLeft 0.6s var(--ease) both; }
+
+/* ── PrimeNG Buttons Global Override (Pink-Gray Theme) ── */
+
+.p-button {
+  transition: all var(--dur) var(--ease) !important;
+}
+
+/* Primary / Default (for any button without severe variants) */
+.p-button:not(.p-button-outlined):not(.p-button-text):not(.p-button-secondary):not(.p-button-danger):not(.p-button-success):not(.p-button-info):not(.p-button-warning):not(.p-button-help):not(.p-button-contrast):not(.p-button-plain) {
+  background: var(--color-pink-deep) !important;
+  border-color: var(--color-pink-deep) !important;
+  color: var(--color-white) !important;
+  
+  &:hover, &:active, &:focus {
+    background: var(--color-pink-vivid) !important;
+    border-color: var(--color-pink-vivid) !important;
+    box-shadow: var(--shadow-pink) !important;
+  }
+}
+
+/* Contrast Severity (Solid) */
+.p-button.p-button-contrast:not(.p-button-outlined):not(.p-button-text) {
+  background: var(--color-gray-800) !important;
+  border-color: var(--color-gray-800) !important;
+  color: var(--color-white) !important;
+  
+  &:hover, &:active, &:focus {
+    background: var(--color-pink-deep) !important;
+    border-color: var(--color-pink-deep) !important;
+    box-shadow: var(--shadow-pink) !important;
+  }
+}
+
+/* Contrast Severity (Outlined) */
+.p-button.p-button-outlined.p-button-contrast {
+  color: var(--color-gray-800) !important;
+  border-color: var(--color-gray-800) !important;
+  background: transparent !important;
+  
+  &:hover, &:active, &:focus {
+    color: var(--color-pink-deep) !important;
+    border-color: var(--color-pink-deep) !important;
+    background: var(--color-pink-light) !important;
+  }
+}
+
+/* Outlined Primary / Default */
+.p-button.p-button-outlined:not(.p-button-secondary):not(.p-button-danger):not(.p-button-success):not(.p-button-info):not(.p-button-warning):not(.p-button-help):not(.p-button-contrast):not(.p-button-plain) {
+  color: var(--color-pink-deep) !important;
+  border-color: var(--color-pink-deep) !important;
+  background: transparent !important;
+  
+  &:hover, &:active, &:focus {
+    color: var(--color-pink-vivid) !important;
+    border-color: var(--color-pink-vivid) !important;
+    background: var(--color-pink-light) !important;
+  }
+}
+
+/* Text / Plain */
+.p-button.p-button-text {
+  background: transparent !important;
+  border-color: transparent !important;
+  
+  &:hover, &:active, &:focus {
+    background: var(--color-pink-light) !important;
+  }
+}
+
+/* p-button-danger generic */
+.p-button.p-button-danger:not(.p-button-outlined):not(.p-button-text) {
+  background: var(--color-pink-vivid) !important;
+  border-color: var(--color-pink-vivid) !important;
+  color: var(--color-white) !important;
+  
+  &:hover, &:active, &:focus {
+    background: var(--color-pink-deep) !important;
+    border-color: var(--color-pink-deep) !important;
+    box-shadow: var(--shadow-pink) !important;
+  }
+}
+
+/* p-button-danger text */
+.p-button.p-button-danger.p-button-text {
+  color: var(--color-pink-deep) !important;
+  
+  &:hover, &:active, &:focus {
+    background: var(--color-pink-light) !important;
+    color: var(--color-pink-vivid) !important;
+  }
+}
+
+/* p-button-secondary text */
+.p-button.p-button-secondary.p-button-text {
+  color: var(--color-gray-400) !important;
+  
+  &:hover, &:active, &:focus {
+    background: var(--color-pink-light) !important;
+    color: var(--color-pink-deep) !important;
+  }
+}
+
