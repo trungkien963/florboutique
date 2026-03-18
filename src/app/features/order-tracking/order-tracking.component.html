@@ -1,0 +1,59 @@
+<section class="order-tracking-page">
+  <div class="container tracking-container">
+    
+    <header class="tracking-header">
+      <h1 class="page-title">{{ lang.t.trackOrderTitle }}</h1>
+    </header>
+
+    <div class="tracking-search-box">
+      <div class="p-inputgroup">
+        <input type="text" pInputText [placeholder]="lang.t.enterPhone" [(ngModel)]="phoneNumber" (keyup.enter)="checkOrder()">
+        <p-button icon="pi pi-search" [label]="lang.t.checkOrderBtn" (click)="checkOrder()" [loading]="isLoading"></p-button>
+      </div>
+    </div>
+
+    <!-- Results Area -->
+    <div class="tracking-results" *ngIf="hasSearched">
+      
+      <div class="not-found-msg" *ngIf="orders.length === 0">
+        <i class="pi pi-inbox empty-icon"></i>
+        <p>{{ lang.t.orderNotFound }}</p>
+      </div>
+
+      <div class="order-list" *ngIf="orders.length > 0">
+        <div class="order-card" *ngFor="let order of orders">
+          
+          <div class="order-card-header">
+            <div>
+              <h3>{{ lang.t.orderId }}: <span>{{ order.id }}</span></h3>
+              <p class="order-date">{{ lang.t.orderDate }}: {{ order.date | date:'dd/MM/yyyy' }}</p>
+            </div>
+            <p-tag [value]="getStatusLabel(order.status)" [severity]="getStatusSeverity(order.status)"></p-tag>
+          </div>
+
+          <div class="order-items">
+            <h4 class="items-title">{{ lang.t.orderItems }}</h4>
+            <ul class="item-list">
+              <li class="item-row" *ngFor="let item of order.items">
+                <img [src]="item.image" [alt]="item.name" class="item-img" />
+                <div class="item-info">
+                  <span class="item-name">{{ item.name }}</span>
+                  <span class="item-qty">x{{ item.quantity }}</span>
+                </div>
+                <div class="item-price">{{ lang.formatMoney(item.price) }}</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="order-card-footer">
+            <span class="total-label">{{ lang.t.orderTotal }}:</span>
+            <span class="total-amount">{{ lang.formatMoney(order.total) }}</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -111,4 +111,40 @@ export interface Translations {
   quantity: string;
   cancel: string;
   addToCart: string;
+
+  trackOrderTitle: string;
+  enterPhone: string;
+  checkOrderBtn: string;
+  orderNotFound: string;
+  orderId: string;
+  orderDate: string;
+  orderTotal: string;
+  orderStatus: string;
+  orderItems: string;
+
+  // Our Story
+  storySubtitle: string;
+  storyTitle: string;
+  storyContent1: string;
+  storyContent2: string;
+  storyMissionTitle: string;
+  storyMissionDesc: string;
+  storyVisionTitle: string;
+  storyVisionDesc: string;
+  storyValuesTitle: string;
+  storyValue1Title: string;
+  storyValue1Desc: string;
+  storyValue2Title: string;
+  storyValue2Desc: string;
+  storyValue3Title: string;
+  storyValue3Desc: string;
+  storyGalleryTitle: string;
+  storyGalleryDesc: string;
+  storyFoundersTitle: string;
+  storyFounder1Role: string;
+  storyFounder1Desc: string;
+  storyFounder2Role: string;
+  storyFounder2Desc: string;
+  storyFounder3Role: string;
+  storyFounder3Desc: string;
 }

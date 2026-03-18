@@ -1,0 +1,234 @@
+// ═══════════════════════════════════════════════
+//   Flơr — Order Tracking
+// ═══════════════════════════════════════════════
+$white:       #ffffff;
+$bg:          #fafafa;
+$gray-200:    #e4e4e4;
+$gray-300:    #d1d1d1;
+$gray-400:    #a8a8a8;
+$gray-500:    #808080;
+$gray-600:    #5c5c5c;
+$gray-800:    #242424;
+$pink-light:  #fde8ef;
+$pink-deep:   #c9507a;
+
+$font-serif:  'Playfair Display', Georgia, serif;
+$font-sans:   'DM Sans', system-ui, sans-serif;
+
+.order-tracking-page {
+  background: $bg;
+  min-height: 70vh;
+  padding: 4rem 1.5rem;
+}
+
+.tracking-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tracking-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  .page-title {
+    font-family: $font-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: $gray-800;
+  }
+}
+
+.tracking-search-box {
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+
+  ::ng-deep .p-inputgroup {
+    display: flex;
+    align-items: center;
+    height: 3.8rem;
+    background: $white;
+    border-radius: 50px;
+    padding: 0.4rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all .3s ease;
+
+    &:focus-within {
+      box-shadow: 0 12px 32px rgba(201, 80, 122, 0.15);
+      border-color: $pink-light;
+      transform: translateY(-2px);
+    }
+    
+    input {
+      font-family: $font-sans;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 1rem 0 1.5rem;
+      font-size: 1.05rem;
+      color: $gray-800;
+      flex: 1;
+      background: transparent;
+      outline: none;
+
+      &::placeholder {
+        color: $gray-400;
+      }
+    }
+
+    p-button {
+      display: flex;
+      height: 100%;
+    }
+
+    /* Target the button itself inside p-button wrapper */
+    ::ng-deep .p-button {
+      height: 100%;
+      margin: 0;
+      background: $gray-800 !important;
+      border: none !important;
+      color: $white !important;
+      font-family: $font-sans;
+      font-weight: 600;
+      padding: 0 2.2rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      border-radius: 50px !important;
+      transition: background .2s, transform .2s !important;
+
+      &:hover {
+        background: $pink-deep !important;
+      }
+    }
+  }
+}
+
+.not-found-msg {
+  text-align: center;
+  padding: 3rem;
+  background: $white;
+  border-radius: 8px;
+  color: $gray-500;
+  
+  .empty-icon {
+    font-size: 3rem;
+    color: $gray-300;
+    margin-bottom: 1rem;
+    display: block;
+  }
+}
+
+.order-card {
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid $gray-200;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    h3 {
+      font-family: $font-sans;
+      margin: 0 0 0.25rem 0;
+      font-size: 1.1rem;
+      color: $gray-600;
+
+      span {
+        color: $gray-800;
+        font-weight: 700;
+      }
+    }
+
+    .order-date {
+      margin: 0;
+      font-size: 0.85rem;
+      color: $gray-400;
+    }
+  }
+
+  .items-title {
+    font-size: 0.9rem;
+    color: $gray-500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .item-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    &:last-child { margin-bottom: 0; }
+
+    .item-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: $pink-light;
+    }
+
+    .item-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      
+      .item-name {
+        font-weight: 600;
+        color: $gray-800;
+      }
+      .item-qty {
+        font-size: 0.85rem;
+        color: $gray-500;
+        margin-top: 0.25rem;
+      }
+    }
+
+    .item-price {
+      font-weight: 600;
+      color: $pink-deep;
+    }
+  }
+
+  &-footer {
+    border-top: 1px solid $gray-200;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .total-label {
+      font-weight: 600;
+      color: $gray-600;
+      font-size: 1.1rem;
+    }
+    .total-amount {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: $pink-deep;
+    }
+  }
+}
+
+// ── RESPONSIVE ──────────
+@media (max-width: 600px) {
+  .order-tracking-page {
+    padding: 2rem 1rem;
+  }
+  .tracking-header .page-title {
+    font-size: 2rem;
+  }
+}

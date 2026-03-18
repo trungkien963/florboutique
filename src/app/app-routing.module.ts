@@ -9,11 +9,8 @@ import { LayoutComponent } from './components/layout/layout.component';
               path: '', component: LayoutComponent,
               children: [
                   { path: '', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule) },
-                  // { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
-                  // { path: 'utilities', loadChildren: () => import('./demo/components/utilities/utilities.module').then(m => m.UtilitiesModule) },
-                  // { path: 'documentation', loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) },
-                  // { path: 'blocks', loadChildren: () => import('./demo/components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
-                  // { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) }
+                  { path: 'track-order', loadChildren: () => import('./features/order-tracking/order-tracking.module').then(m => m.OrderTrackingModule) },
+                  { path: 'our-story', loadChildren: () => import('./features/our-story/our-story.module').then(m => m.OurStoryModule) },
               ]
           },
           // { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
