@@ -3,7 +3,7 @@ import { Translations } from '../models/language.model';
 export const VI: Translations = {
   promoBar: '🌸 Miễn phí giao hàng cho đơn trên 500k · Giao hàng trong ngày có sẵn',
   navBouquets: 'Bó hoa',
-  navArrangements: 'Cắm bình',
+  navArrangements: 'Hoa Để Bàn',
   navFoamArrangements: 'Hoa Cắm Xốp Để Bàn',
   navOccasions: 'Dịp đặc biệt',
   navPlants: 'Cây cảnh',
